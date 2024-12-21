@@ -13,3 +13,6 @@ interface JadwalDao {
     @Insert
     suspend fun insertJadwal(jadwal: Jadwal)
 
+    @Query("SELECT * FROM Jadwal ORDER BY tanggal ASC")
+    fun getAllJadwal() : Flow<List<Jadwal>>
+
