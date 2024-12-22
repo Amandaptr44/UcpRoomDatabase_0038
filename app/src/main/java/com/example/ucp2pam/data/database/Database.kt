@@ -10,4 +10,8 @@ import com.example.ucp2pam.data.entity.Dokter
 import com.example.ucp2pam.data.entity.Jadwal
 
 @Database(entities = [Dokter::class, Jadwal::class], version = 1, exportSchema = false)
+abstract class Database : RoomDatabase() {
+    abstract fun DokterDao(): DokterDao
+    abstract fun JadwalDao(): JadwalDao
+
 
