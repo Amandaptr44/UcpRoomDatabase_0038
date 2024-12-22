@@ -14,4 +14,21 @@ abstract class Database : RoomDatabase() {
     abstract fun DokterDao(): DokterDao
     abstract fun JadwalDao(): JadwalDao
 
+    companion object{
+        @Volatile
+        private var instance: Database? = null
+
+        fun getDatabase(context: Context): Database{
+            return instance ?: synchronized(this){
+                Room.databaseBuilder(
+                     context.applicationContext,
+                    Database::class.java,
+                    "Database"
+                )
+                    .build().also { { instance = it} }
+            }
+
+        }
+    }
+    }
 
