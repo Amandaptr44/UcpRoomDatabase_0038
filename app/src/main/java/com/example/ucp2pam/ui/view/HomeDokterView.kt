@@ -32,3 +32,11 @@ fun HomeDokterView(
     onBack: () -> Unit = { },
     modifier : Modifier = Modifier
 ) {
+    Scaffold (
+        topBar = {
+            TopAppBarp(
+                judul = "Daftar Dokter",
+                showBackButton = true,
+                onBack = onBack,
+            )
+        },
