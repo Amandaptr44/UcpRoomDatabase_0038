@@ -76,3 +76,11 @@ data class DokterUiState(
     val snackbarMessage: String? = null,
 )
 
+data class FormErrorStateDokter(
+    val id: String? = null,
+    val nama: String? = null,
+    val spesialis: String? = null,
+    val klinik: String? = null,
+    val noHp: String? = null,
+    val jamKerja: String? = null,
+)
