@@ -29,3 +29,50 @@ import com.example.ucp2pam.ui.viewmodel.DokterViewModel
 object DestinasiHome : AlamatNavigasi {
     override val route = "Homeutama"
 }
+@Composable
+fun HomeUtamaview(
+    onDokter: () -> Unit,
+    onJadwal: () -> Unit
+){
+    Column (
+        modifier = Modifier
+            .fillMaxSize()
+            .background(
+                color = colorResource(
+                    id = R.color.white
+                )
+            ),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        Image(
+            painter = painterResource(
+                id = R.drawable.umy
+            ),
+            contentDescription = "",
+            modifier = Modifier.size(150.dp)
+        )
+        Spacer(modifier = Modifier.padding(16.dp))
+        Button(
+            onClick = {
+                onDokter ()
+
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(32.dp),
+        ) {
+            Text(text = "Dokter")
+        }
+        Button(
+            onClick = {
+                onJadwal ()
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(32.dp),
+        ) {
+            Text(text = "Jadwal")
+        }
+    }
+}
