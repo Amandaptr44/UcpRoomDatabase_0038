@@ -64,3 +64,15 @@ class DokterViewModel(
         }
     }
 
+    // Reset pesan Snackbar setelah ditampilkan
+    fun resetSnackBarMessage() {
+        uiState = uiState.copy(snackbarMessage = null)
+    }
+}
+
+data class DokterUiState(
+    val dokterEvent: DokterEvent = DokterEvent(),
+    val isEntryValid: FormErrorStateDokter = FormErrorStateDokter(),
+    val snackbarMessage: String? = null,
+)
+
