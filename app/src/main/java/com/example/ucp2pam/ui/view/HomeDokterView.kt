@@ -51,4 +51,13 @@ fun HomeDokterView(
                 )
             }
         }
-    ) }
+    ) { innerPadding ->
+        val homeUiState by viewModel.homeUiState.collectAsState()
+
+        BodyHomeDokterView(
+            homeUiState = homeUiState,
+            modifier = Modifier.padding(innerPadding)
+        )
+    }
+}
+
