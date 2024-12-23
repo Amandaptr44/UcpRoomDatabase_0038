@@ -92,3 +92,33 @@ fun BodyHomeDokterView(
             }
         }
 
+        homeUiState.listDtr.isEmpty() -> {
+            //Menampilkan pesan jika data kosong
+            Box(
+                modifier = modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ){
+                Text(
+                    text = "Tidak ada data mahasiswa",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
+        }
+
+        else -> {
+            ListDokter(
+                listDtr = homeUiState.listDtr,
+                onClick = {
+                    onClick(it)
+                    println(
+                        it
+                    )
+                },
+                modifier = modifier
+            )
+        }
+    }
+}
+
