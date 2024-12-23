@@ -61,3 +61,24 @@ fun HomeDokterView(
     }
 }
 
+
+@Composable
+fun BodyHomeDokterView(
+    homeUiState: HomeUiState,
+    onClick: (String) -> Unit = {},
+    modifier: Modifier = Modifier
+){
+    val coroutineScope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+    when {
+        homeUiState.isLoading -> {
+            //Menampilkan indikator loading
+            Box(
+                modifier = modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
+
+        }
