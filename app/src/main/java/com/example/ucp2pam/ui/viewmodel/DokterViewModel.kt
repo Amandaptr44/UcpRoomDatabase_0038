@@ -13,3 +13,12 @@ class DokterViewModel(
     private val repositoryDokter: RepositoryDokter
 ) : ViewModel() {
 
+    var uiState by mutableStateOf(DokterUiState())
+
+    // Memperbarui state berdasarkan input pengguna
+    fun updateState(dokterEvent: DokterEvent) {
+        uiState = uiState.copy(
+            dokterEvent = dokterEvent,
+        )
+    }
+
