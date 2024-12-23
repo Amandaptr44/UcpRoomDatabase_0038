@@ -103,3 +103,12 @@ data class DokterEvent(
     val jamKerja: String = ""
 )
 
+// Menyimpan input form ke dalam entity
+fun DokterEvent.toDokterEntity(): Dokter = Dokter(
+    dokter_id = id,
+    nama = nama,
+    spesialis = spesialis,
+    klinik = klinik,
+    noHp = noHp,
+    jamKerja = jamKerja
+)
