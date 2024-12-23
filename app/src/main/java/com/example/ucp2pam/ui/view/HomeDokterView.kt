@@ -122,3 +122,24 @@ fun BodyHomeDokterView(
     }
 }
 
+@Composable
+fun ListDokter(
+    listDtr: List<Dokter>,
+    modifier: Modifier = Modifier,
+    onClick: (String) -> Unit = { }
+) {
+    LazyColumn(
+        modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+    ) {
+        items(
+            items = listDtr,
+            itemContent = { dtr ->
+                CardDokter(
+                    dtr = dtr,
+                    onClick = { onClick(dtr.dokter_id) }
+                )
+            }
+        )
+    }
+}
+
