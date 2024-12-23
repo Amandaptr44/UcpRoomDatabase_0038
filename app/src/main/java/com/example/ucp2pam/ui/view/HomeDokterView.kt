@@ -40,3 +40,15 @@ fun HomeDokterView(
                 onBack = onBack,
             )
         },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = onAddDokter,
+                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Icon(imageVector = Icons.Default.Add,
+                    contentDescription = "Tambah Dokter",
+                )
+            }
+        }
+    ) }
