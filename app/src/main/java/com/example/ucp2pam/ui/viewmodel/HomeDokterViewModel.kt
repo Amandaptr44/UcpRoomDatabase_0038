@@ -16,3 +16,11 @@ import kotlinx.coroutines.flow.stateIn
 class HomeDokterViewModel(
     private val repositoryDokter: RepositoryDokter
 ) : ViewModel() {
+    val homeUiState: StateFlow<HomeUiState> = repositoryDokter.getAllDokter()
+        .filterNotNull()
+        .map {
+            HomeUiState(
+                listDtr = it.toList(),
+                isLoading = false,
+            )
+        }
