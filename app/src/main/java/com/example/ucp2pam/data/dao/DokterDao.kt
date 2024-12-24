@@ -4,6 +4,7 @@ import android.adservices.adid.AdId
 import androidx.room.Dao
 import androidx.room.Insert
 import com.example.ucp2pam.data.entity.Dokter
+import com.example.ucp2pam.data.entity.Jadwal
 import kotlinx.coroutines.flow.Flow
 import androidx.room.Query as Query
 
@@ -15,6 +16,7 @@ interface DokterDao {
     @Query("SELECT * FROM dokter ORDER BY nama ASC")
     fun getAllDokter() : Flow<List<Dokter>>
 
-    @Query("SELECT * FROM dokter WHERE dokter_id = :dokterId")
-    fun getDokter(dokterId: Long): Flow<Dokter>
+    @Query("SELECT * FROM dokter WHERE dokter_id = dokter_id")
+    fun getDokter(): Flow<Dokter>
+
 }
