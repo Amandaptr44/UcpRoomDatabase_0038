@@ -18,5 +18,4 @@ interface DokterDao {
 
     @Query("SELECT * FROM dokter WHERE dokter_id = dokter_id")
     fun getDokter(): Flow<Dokter>
-
 }
