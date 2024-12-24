@@ -47,3 +47,10 @@ class HomeDokterViewModel(
         )
 }
 
+data class HomeUiState(
+    val listDtr: List<Dokter> = listOf(),
+    val isLoading: Boolean = false,
+    val isError: Boolean = false,
+    val errorMessage: String = ""
+)
+
